@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0)
+            return false;
+        string s;
+        while(x>0){
+            int k=x%10;
+            x/=10;
+            s.push_back(k+'0');
+        }
+        string p=s;
+        reverse(s.begin(),s.end());
+        if(p==s)
+            return true;
+        else
+            return false;
+    }
+};
