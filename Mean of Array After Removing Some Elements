@@ -1,0 +1,25 @@
+class Solution {
+public:
+    double trimMean(vector<int>& arr) {
+        int x=(arr.size())/20;
+        for(int i=0;i<arr.size();i++)
+        {
+            for(int j=i+1;j<arr.size();j++)
+            {
+                if(arr[j]<arr[i])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+             }
+        }
+        double sum =0;
+        for(int i=x;i<arr.size()-x;i++)
+        {
+            sum=sum+arr[i];
+        }
+        return sum/(arr.size()-2*x);
+          
+    }
+};
